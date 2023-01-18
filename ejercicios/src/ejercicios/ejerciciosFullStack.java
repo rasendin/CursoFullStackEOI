@@ -68,6 +68,34 @@ public class ejerciciosFullStack {
 		System.out.println("A toma el valor de D -> A = " + (A = D));
 		System.out.println("D toma el valor de B -> D = " + (D = auxB));
 	}
+	
+	public static void ejercicio7() {
+		
+		char letra1 = 'b';
+		char letra2 = 'k';
+		
+		int diferencia = letra2-letra1;
+		System.out.println("b tiene la posición "+(int)letra1);
+		System.out.println("k tiene la posición "+(int)letra2);
+		
+		System.out.println("Diferencia entre b y k: " + diferencia);
+	}
+	
+	public static void ejercicio8() {
+		
+		int a=5,b,c;;
+		b=++a;
+		System.out.println(b);
+		System.out.println(a);
+		c=a++;
+		System.out.println(c);
+		System.out.println(a);
+		b=b*5;
+		System.out.println(b);
+		a=a*2;
+		System.out.println(a);
+		
+	}
 
 	public static void main(String[] args) {
 
@@ -76,7 +104,9 @@ public class ejerciciosFullStack {
 		// ejercicio3();
 		// ejercicio4();
 		// ejercicio5();
-		ejercicio6();
+		// ejercicio6();
+		// ejercicio7();
+		// ejercicio8();
 	}
 
 }
