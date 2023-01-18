@@ -53,20 +53,20 @@ public class ejerciciosFullStack {
 
 		System.out.println("N + 77 = " + (N += 77));
 		System.out.println("N - 5 = " + (N -= 3));
-		System.out.println("N * 2 = " + (N *= 2));
+		System.out.println("N * 2 = " + (N *= 2));	
 
 	}
 
 	public static void ejercicio6() {
 
-		int A = 2, B = 4, C = 6, D = 8, valorGuardado = B;
+		int A = 2, B = 4, C = 6, D = 8, auxB = B;
 
 		System.out.println("Valores iniciales: A = " + A + " B = " + B + " C = " + C + " D = " + D);
 
 		System.out.println("B toma el valor de C -> B = " + (B = C));
 		System.out.println("C toma el valor de A -> C = " + (C = A));
 		System.out.println("A toma el valor de D -> A = " + (A = D));
-		System.out.println("D toma el valor de B -> D = " + (D = valorGuardado));
+		System.out.println("D toma el valor de B -> D = " + (D = auxB));
 	}
 
 	public static void main(String[] args) {

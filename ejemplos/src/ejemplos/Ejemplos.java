@@ -118,34 +118,63 @@ public class Ejemplos {
 	}
 
 	public static void ejemplosIncrementosDecrementos() {
+
 		int numero = 10;
 		// pre-incremento
-		++numero;  // 11
-		System.out.println(numero);  // 11
+		++numero; // 11
+		System.out.println(numero); // 11
 		// post-incremento
-		numero++;  // 12
-		System.out.println(numero);  // 12
+		numero++; // 12
+		System.out.println(numero); // 12
 		// pre-decremento
-		--numero;  // 11
-		System.out.println(numero);  // 11
+		--numero; // 11
+		System.out.println(numero); // 11
 		// post-decremento
-		numero--;  // 10
-		System.out.println(numero);  // 10
-		
+		numero--; // 10
+		System.out.println(numero); // 10
+
 		//// LO IMPORTANTE ES EL MOMENTO EN QUE INCREMENTA O DECREMENTA
-		System.out.println(++numero);  // 10 u 11 ? -> 11 y número = 11
-		System.out.println(numero++);  // 11 y número = 12
-		System.out.println(numero);  // 12
-		
-		//System.out.println(++numero+numero++); // 26 (13 + 13) y luego numero=14  // a+b = b+a
-		System.out.println(numero+++ ++numero); // 26 (13+13) y luego numero=14  // a+b = b+a
-		System.out.println(numero);  // 14
-		int numero2 = ++numero;  // numero2 = 15; numero = 15;
+		System.out.println(++numero); // 10 u 11 ? -> 11 y número = 11
+		System.out.println(numero++); // 11 y número = 12
+		System.out.println(numero); // 12
+
+		// System.out.println(++numero+numero++); // 26 (13 + 13) y luego numero=14 //
+		// a+b = b+a
+		System.out.println(numero++ + ++numero); // 26 (13+13) y luego numero=14 // a+b = b+a
+		System.out.println(numero); // 14
+		int numero2 = ++numero; // numero2 = 15; numero = 15;
 		System.out.println("numero2 = " + numero2 + " numero = " + numero);
-		int numero3 = numero++;  // numero3 = 15; numero = 16;
+		int numero3 = numero++; // numero3 = 15; numero = 16;
 		System.out.println("numero2 = " + numero3 + " numero = " + numero);
 	}
-	
+
+	public static void ejemplosConstantes() {
+		final double IVA = 0.21;
+		final double PI = 3.1416;
+		double precioVaquero = 50;
+		System.out.println("El precio final es: " + (precioVaquero * (1 + IVA)));
+		/*
+		 * PI = 3.14159; Daría un error porque el valor de la variable final no se puede
+		 * modificar en otra línea
+		 */
+	}
+
+	public static void conversionesNumerosCadenas() {
+		int num = 10;
+		String cadena = "11";
+		System.out.println(cadena + num); // 1110
+		// Convertir cadena a número
+		System.out.println(Integer.parseInt(cadena) + num); // 21
+		// Convertir número a cadena
+		int prefijo = 34;
+		int telefono = 677777777;
+		System.out.println(prefijo + telefono); // Lo suma porque son int 677777811
+		System.out.println(""+prefijo + telefono); // 34677777777
+		System.out.println(String.valueOf(prefijo) + telefono); // 34677777777
+		System.out.println("00" + prefijo + "-" + telefono); // 0034-677777777
+		
+	}
+
 	public static void main(String[] args) {
 
 		// ejemplosComentarios();
@@ -153,8 +182,9 @@ public class Ejemplos {
 		// ejemplosString();
 		// ejemplosBoolean();
 		// tablasVerdad();
-		ejemplosIncrementosDecrementos();
-
+		// ejemplosIncrementosDecrementos();
+		// ejemplosConstantes();
+		conversionesNumerosCadenas();
 	}
 
 }
