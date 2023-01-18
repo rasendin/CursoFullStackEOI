@@ -51,6 +51,7 @@ public class Ejemplos {
 		
 		String cadena2 = "Hola", cadena3 = "Adios";
 		String cadena4 = cadena2 + cadena1;		// "HolaRaul"
+		String cadena5 = cadena2 + " " + cadena1;		// "Hola Raul"
 		String prefijo = "34";
 		String telefono = "611111111";
 		int num = 23;
@@ -62,8 +63,8 @@ public class Ejemplos {
 	
 	public static void main(String[] args) {
 		
-		ejemplosComentarios();
-		ejemplosTipos();
+		// ejemplosComentarios();
+		// ejemplosTipos();
 		ejemplosString();
 
 	}
