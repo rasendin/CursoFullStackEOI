@@ -108,6 +108,67 @@ public class ejerciciosFullStack {
 		System.out.println("Su nombre es: "+nombre);
 		
 	}
+	
+	public static void ejercicio10() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Escriba un número entero: ");
+		int num = sc.nextInt();
+		System.out.println("El doble de ese número es: "+num*2);
+		System.out.println("El triple de ese número es: "+num*3);
+	}
+	
+	public static void ejercicio11() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ingrese cantidad de grados centígrados: ");
+		int centigrados = sc.nextInt();
+		int fahrenheit = 32+(9*centigrados/5);
+		System.out.println(centigrados+" son "+fahrenheit+" grados fahrenheit");
+		
+	}
+	
+	public static void ejercicio12() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ingrese un número de 3 cifras: ");
+		int num = sc.nextInt();
+		System.out.println(num/100);
+		num%=100;
+		System.out.println(num/10);
+		System.out.println(num%10);
+		
+	}
+	
+	public static void ejercicio13() {
+		
+		Scanner sc=new Scanner(System.in);
+		int dia,mes,anyo;
+		int sumaFecha;
+		int numeroSuerte=0;
+		System.out.print("Escriba su fecha de nacimiento: ");
+		
+		dia=sc.nextInt();
+		mes=sc.nextInt();
+		anyo=sc.nextInt();
+		
+		//Sumar los numeros de la fecha
+		sumaFecha=dia+mes+anyo;
+		
+		//Averiguar las cuatro cifras del numero
+		
+		numeroSuerte+=sumaFecha%10;
+		sumaFecha/=10;
+		numeroSuerte+=sumaFecha%10; 
+		sumaFecha/=10;
+		numeroSuerte+=sumaFecha%10;
+		numeroSuerte+=sumaFecha/10;
+		
+		
+		System.out.println("Tu número de la suerte es: "+numeroSuerte);
+		
+	}
 
 	public static void main(String[] args) {
 
@@ -119,7 +180,11 @@ public class ejerciciosFullStack {
 		// ejercicio6();
 		// ejercicio7();
 		// ejercicio8();
-		ejercicio9();
+		// ejercicio9();
+		// ejercicio10();
+		// ejercicio11();
+		// ejercicio12();
+		ejercicio13();
 	}
 
 }
