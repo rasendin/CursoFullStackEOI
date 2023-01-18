@@ -165,10 +165,10 @@ public class Ejemplos {
 		System.out.println(cadena + num); // 1110
 		// Convertir cadena a número
 		System.out.println(Integer.parseInt(cadena) + num); // 21
-		// Convertir número a cadena
 		int prefijo = 34;
 		int telefono = 677777777;
 		System.out.println(prefijo + telefono); // Lo suma porque son int 677777811
+		// Convertir número a cadena
 		System.out.println(""+prefijo + telefono); // 34677777777
 		System.out.println(String.valueOf(prefijo) + telefono); // 34677777777
 		System.out.println("00" + prefijo + "-" + telefono); // 0034-677777777
