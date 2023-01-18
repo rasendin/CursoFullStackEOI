@@ -1,7 +1,7 @@
 package ejemplos;
 
 public class Ejemplos {
-	
+
 	public static void ejemplosComentarios() {
 		/**
 		 * Para poner el comentario en azul
@@ -12,7 +12,7 @@ public class Ejemplos {
 		System.out.println("Hola mundo");
 		// System.out.println("Comentario individual");
 	}
-	
+
 	public static void ejemplosTipos() {
 		// Números enteros
 		int numero = 5;
@@ -43,29 +43,87 @@ public class Ejemplos {
 		System.out.println("La suma de letra a más 3 es: " + (letraA + 3));
 		System.out.println("La suma de letra a más 3 es: " + (letraA + 3));
 	}
-	
+
 	public static void ejemplosString() {
-		
+
 		String cadena1;
-		cadena1="Raul";
-		
+		cadena1 = "Raul";
+
 		String cadena2 = "Hola", cadena3 = "Adios";
-		String cadena4 = cadena2 + cadena1;		// "HolaRaul"
-		String cadena5 = cadena2 + " " + cadena1;		// "Hola Raul"
+		String cadena4 = cadena2 + cadena1; // "HolaRaul"
+		String cadena5 = cadena2 + " " + cadena1; // "Hola Raul"
 		String prefijo = "34";
 		String telefono = "611111111";
 		int num = 23;
 		System.out.println(prefijo + "-" + telefono);
 		System.out.println("Otra cosa");
-		System.out.printf("%s tiene %d años",cadena1,num);
-		
+		System.out.printf("%s tiene %d años", cadena1, num);
+
 	}
-	
+
+	public static void ejemplosBoolean() {
+
+		// Son valores que solo pueden almacenar true o false;
+		boolean verdad = true;
+		boolean falso = false;
+		boolean comparacion1 = 10 < 20; // true;
+		System.out.println(10 < 20); // true;
+		System.out.println(comparacion1); // true;
+
+		// Condiciones de comparacion <,>,<=,>=,==,!=
+		int num1 = 10;
+		int num2 = 20;
+		boolean c1 = 10 < 20; // true
+		boolean c2 = 10 > 20; // false
+		boolean c3 = 10 <= 20; // true
+		boolean c4 = 10 >= 20; // false
+		boolean c5 = 10 == 20; // false
+		boolean c6 = 10 != 20; // true
+		String cadena1 = "hola";
+		String cadena2 = "adiós";
+		String cadena3 = "hola";
+		String cadena4 = "Hola";
+		System.out.println(cadena1.equals(cadena2)); // Para comparar cadenas - false
+		System.out.println(cadena1.equals(cadena3)); // Para comparar cadenas - true
+		System.out.println(cadena1.equals(cadena4)); // Para comparar cadenas - false
+
+		num1 = 5;
+		double num3 = 5.0;
+		double num4 = 5.1;
+		System.out.println(num1 == num3); // true
+		System.out.println(num1 == num4); // false
+		System.out.println((11 / 2) == num1); // true
+		System.out.println((11.0 / 2) == num1); // false
+		System.out.println((11 % 2) == 1); // true
+		System.out.println((11 % 2) == 0); // false
+		System.out.println(23 % 4); // el resto de la division es 3
+	}
+
+	public static void tablasVerdad() {
+
+		int edad = 25;
+		int anyosCarnet = 6;
+		String sexo = "Masculino";
+		String nombre = "Pepe";
+		boolean esPepeMayor = edad >= 18 && nombre.equals("Pepe"); // true
+		System.out.println(esPepeMayor); // true
+
+		boolean tieneDescuento = (sexo.equals("Masculino") && anyosCarnet > 10
+				|| (sexo.equals("Femenino") && anyosCarnet > 5)); // false || false
+		System.out.println(tieneDescuento); // false
+
+		boolean estoQueDa = sexo.equals("Masculino") && nombre.equals("Raul") || anyosCarnet > 5; // true
+		System.out.println(estoQueDa);
+
+	}
+
 	public static void main(String[] args) {
-		
+
 		// ejemplosComentarios();
 		// ejemplosTipos();
-		ejemplosString();
+		// ejemplosString();
+		// ejemplosBoolean();
+		tablasVerdad();
 
 	}
 
