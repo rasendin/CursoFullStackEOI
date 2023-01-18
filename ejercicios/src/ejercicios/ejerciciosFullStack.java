@@ -1,5 +1,7 @@
 package ejercicios;
 
+import java.util.Scanner;
+
 public class ejerciciosFullStack {
 
 	public static void ejercicio1() {
@@ -96,6 +98,16 @@ public class ejerciciosFullStack {
 		System.out.println(a);
 		
 	}
+	
+	public static void ejercicio9() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Ingrese su nombre: ");	
+		String nombre = sc.nextLine();
+		System.out.println("Su nombre es: "+nombre);
+		
+	}
 
 	public static void main(String[] args) {
 
@@ -107,6 +119,7 @@ public class ejerciciosFullStack {
 		// ejercicio6();
 		// ejercicio7();
 		// ejercicio8();
+		ejercicio9();
 	}
 
 }
