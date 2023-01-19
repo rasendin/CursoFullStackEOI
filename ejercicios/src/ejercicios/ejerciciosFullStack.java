@@ -180,16 +180,17 @@ public class ejerciciosFullStack {
 		producto1 = sc.nextLine();
 		System.out.print("Precio del primer producto: ");
 		precio1 = Double.parseDouble(sc.next().replace(',', '.'));
-		
+		sc.nextLine();
 		System.out.print("Segundo producto: ");
 		producto2 = sc.nextLine();
 		System.out.print("Precio del segundo producto: ");
 		precio2 = Double.parseDouble(sc.next().replace(',', '.'));
-		
+		sc.nextLine();
 		System.out.print("Tercer producto: ");
 		producto3 = sc.nextLine();
 		System.out.print("Precio del tercer producto: ");
 		precio3 = Double.parseDouble(sc.next().replace(',', '.'));
+		sc.nextLine();
 		sc.close();
 		
 		System.out.printf("%-15s%12s%12s\n","NOMBRE","PRECIO","CON IVA");
