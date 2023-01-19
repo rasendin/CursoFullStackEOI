@@ -55,7 +55,7 @@ public class ejerciciosFullStack {
 
 		System.out.println("N + 77 = " + (N += 77));
 		System.out.println("N - 5 = " + (N -= 3));
-		System.out.println("N * 2 = " + (N *= 2));	
+		System.out.println("N * 2 = " + (N *= 2));
 
 	}
 
@@ -70,103 +70,129 @@ public class ejerciciosFullStack {
 		System.out.println("A toma el valor de D -> A = " + (A = D));
 		System.out.println("D toma el valor de B -> D = " + (D = auxB));
 	}
-	
+
 	public static void ejercicio7() {
-		
+
 		char letra1 = 'b';
 		char letra2 = 'k';
-		
-		int diferencia = letra2-letra1;
-		System.out.println("b tiene la posición "+(int)letra1);
-		System.out.println("k tiene la posición "+(int)letra2);
-		
+
+		int diferencia = letra2 - letra1;
+		System.out.println("b tiene la posición " + (int) letra1);
+		System.out.println("k tiene la posición " + (int) letra2);
+
 		System.out.println("Diferencia entre b y k: " + diferencia);
 	}
-	
+
 	public static void ejercicio8() {
-		
-		int a=5,b,c;;
-		b=++a;
+
+		int a = 5, b, c;
+		;
+		b = ++a;
 		System.out.println(b);
 		System.out.println(a);
-		c=a++;
+		c = a++;
 		System.out.println(c);
 		System.out.println(a);
-		b=b*5;
+		b = b * 5;
 		System.out.println(b);
-		a=a*2;
+		a = a * 2;
 		System.out.println(a);
-		
+
 	}
-	
+
 	public static void ejercicio9() {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.print("Ingrese su nombre: ");	
+
+		System.out.print("Ingrese su nombre: ");
 		String nombre = sc.nextLine();
-		System.out.println("Su nombre es: "+nombre);
-		
+		System.out.println("Su nombre es: " + nombre);
+
 	}
-	
+
 	public static void ejercicio10() {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.print("Escriba un número entero: ");
 		int num = sc.nextInt();
-		System.out.println("El doble de ese número es: "+num*2);
-		System.out.println("El triple de ese número es: "+num*3);
+		System.out.println("El doble de ese número es: " + num * 2);
+		System.out.println("El triple de ese número es: " + num * 3);
 	}
-	
+
 	public static void ejercicio11() {
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese cantidad de grados centígrados: ");
 		int centigrados = sc.nextInt();
-		int fahrenheit = 32+(9*centigrados/5);
-		System.out.println(centigrados+" son "+fahrenheit+" grados fahrenheit");
-		
+		int fahrenheit = 32 + (9 * centigrados / 5);
+		System.out.println(centigrados + " son " + fahrenheit + " grados fahrenheit");
+
 	}
-	
+
 	public static void ejercicio12() {
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese un número de 3 cifras: ");
 		int num = sc.nextInt();
-		System.out.println(num/100);
-		num%=100;
-		System.out.println(num/10);
-		System.out.println(num%10);
-		
+		System.out.println(num / 100);
+		num %= 100;
+		System.out.println(num / 10);
+		System.out.println(num % 10);
+
+	}
+
+	public static void ejercicio13() {
+
+		Scanner sc = new Scanner(System.in);
+		int dia, mes, anyo;
+		int sumaFecha;
+		int numeroSuerte = 0;
+		System.out.print("Escriba su fecha de nacimiento: ");
+
+		dia = sc.nextInt();
+		mes = sc.nextInt();
+		anyo = sc.nextInt();
+
+		// Sumar los numeros de la fecha
+		sumaFecha = dia + mes + anyo;
+
+		// Averiguar las cuatro cifras del numero
+
+		numeroSuerte += sumaFecha % 10;
+		sumaFecha /= 10;
+		numeroSuerte += sumaFecha % 10;
+		sumaFecha /= 10;
+		numeroSuerte += sumaFecha % 10;
+		numeroSuerte += sumaFecha / 10;
+
+		System.out.println("Tu número de la suerte es: " + numeroSuerte);
+
 	}
 	
-	public static void ejercicio13() {
+	public static void ejercicio15() {
+		Scanner sc = new Scanner(System.in);
 		
-		Scanner sc=new Scanner(System.in);
-		int dia,mes,anyo;
-		int sumaFecha;
-		int numeroSuerte=0;
-		System.out.print("Escriba su fecha de nacimiento: ");
+		String producto1,producto2,producto3;
+		double precio1,precio2,precio3;
+		System.out.print("Primer producto: ");
+		producto1 = sc.nextLine();
+		System.out.print("Precio del primer producto: ");
+		precio1 = Double.parseDouble(sc.next().replace(',', '.'));
+		System.out.println("Segundo producto: ");
+		producto2 = sc.nextLine();
+		System.out.print("Precio del segundo producto: ");
+		precio2 = Double.parseDouble(sc.next().replace(',', '.'));
+		System.out.print("Tercer producto: ");
+		producto3 = sc.nextLine();
+		System.out.print("Precio del tercer producto: ");
+		precio3 = Double.parseDouble(sc.next().replace(',', '.'));
+		sc.close();
 		
-		dia=sc.nextInt();
-		mes=sc.nextInt();
-		anyo=sc.nextInt();
-		
-		//Sumar los numeros de la fecha
-		sumaFecha=dia+mes+anyo;
-		
-		//Averiguar las cuatro cifras del numero
-		
-		numeroSuerte+=sumaFecha%10;
-		sumaFecha/=10;
-		numeroSuerte+=sumaFecha%10; 
-		sumaFecha/=10;
-		numeroSuerte+=sumaFecha%10;
-		numeroSuerte+=sumaFecha/10;
-		
-		
-		System.out.println("Tu número de la suerte es: "+numeroSuerte);
+		System.out.printf("%-15s%12s%12s\n","NOMBRE","PRECIO","CON IVA");
+		System.out.printf("%-15s%12.2f€%12.2f€\n",producto1,precio1,precio1+precio1*0.21);
+		System.out.printf("%-15s%12.2f€%12.2f€\n",producto2,precio2,precio2+precio2*0.21);
+		System.out.printf("%-15s%12.2f€%12.2f€\n",producto3,precio3,precio3+precio3*0.21);
 		
 	}
 
@@ -184,7 +210,8 @@ public class ejerciciosFullStack {
 		// ejercicio10();
 		// ejercicio11();
 		// ejercicio12();
-		ejercicio13();
+		// ejercicio13();
+		ejercicio15();
 	}
 
 }
