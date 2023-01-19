@@ -3,80 +3,146 @@ package estructuras;
 import java.util.Scanner;
 
 public class Estructuras {
-	
+
 	public static void ejemploIf() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Introduzca su nombre: ");
 		String nombre = sc.nextLine();
-		
-		if(nombre.equals("Fran")) {
+
+		if (nombre.equals("Fran")) {
 			System.out.println("Hola Fran");
-		}		
-		System.out.println("Pasa un buen día!");		
-		sc.close();		
+		}
+		System.out.println("Pasa un buen día!");
+		sc.close();
 	}
-	
+
 	public static void ejemploIfElse() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Introduzca su nombre: ");
 		String nombre = sc.nextLine();
-		
-		if(nombre.equals("Fran")) {
+
+		if (nombre.equals("Fran")) {
 			System.out.println("Hola Fran");
 			System.out.println("Encantado de verte de nuevo");
 		} else {
 			System.out.println("Hola persona desconocida");
 			System.out.println("Espero verte habitualmento por aquí");
 		}
-		System.out.println("Pasa un buen día!");		
-		sc.close();	
+		System.out.println("Pasa un buen día!");
+		sc.close();
 	}
-	
+
 	public static void ejemploIfElseIfElse() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Tira un dado y escribe que número ha salido: ");
 		int numero = sc.nextInt();
-		
-		if(numero==1) {
+
+		if (numero == 1) {
 			System.out.println("Ha salido un uno");
-		} else if(numero==2) {
+		} else if (numero == 2) {
 			System.out.println("Ha salido un dos");
-		} else if(numero==3) {
+		} else if (numero == 3) {
 			System.out.println("Ha salido un tres");
-		} else if(numero==4) {
+		} else if (numero == 4) {
 			System.out.println("Ha salido un cuatro");
-		} else if(numero==5) {
+		} else if (numero == 5) {
 			System.out.println("Ha salido un cinco");
-		} else if(numero==6) {
+		} else if (numero == 6) {
 			System.out.println("Ha salido un seis");
 		} else {
 			System.out.println("¿Qué tipo de dato tienes que puede salir diferente 1-6?");
 		}
-		
-		
-		sc.close();	
+
+		sc.close();
 	}
-	
+
 	public static void IfElseIfSinelse() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Introduzca su equipo favorito: ");
 		String equipo = sc.nextLine();
-		
-		if(equipo.equals("Barcelona")) {
+
+		if (equipo.toLowerCase().equals("barcelona")) {
 			System.out.println("Visca el Barça!");
-		} else if(equipo.equals("Madrid")) {
+		} else if (equipo.toUpperCase().equals("MADRID")) {
 			System.out.println("Hala Madrid!");
+		} else if (equipo.equalsIgnoreCase("atletico")) {
+			System.out.println("Aupa Atleti!");
 		}
 		System.out.println("Bienvenido a nuestro programa de fútbol!");
 		sc.close();
 	}
-	
+
+	public static void ejemploSwitch() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Tira un dado y escribe que número ha salido: ");
+		int num = sc.nextInt();
+		switch (num) {
+		case 1:
+			System.out.println("Ha salido un uno");
+			break;
+		case 2:
+			System.out.println("Ha salido un dos");
+			break;
+		case 3:
+			System.out.println("Ha salido un tres");
+			break;
+		case 4:
+			System.out.println("Ha salido un cuatro");
+			break;
+		case 5:
+			System.out.println("Ha salido un cinco");
+			break;
+		case 6:
+			System.out.println("Ha salido un seis");
+			break;
+		default:
+			System.out.println("Un dado no tiene más números");
+			break;
+
+		}
+	}
+
+	public static void ejemploTernarias() {
+		int edad = 15;
+
+		/*
+		 * if(edad>=18) System.out.println("Eres mayor de edad"); else
+		 * System.out.println("Eres menor de edad");
+		 */
+
+		System.out.println(edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad");
+
+		/*
+		 * int descuento; if(edad>18) { descuento=5; }
+		 * else
+		 * { descuento=20; }
+		 */
+
+		int descuento = edad >= 18 ? 5 : 20;
+		System.out.println(descuento);
+
+		/*
+		 * int tresValores; if(edad<18) { tresValores=1; }
+		 *  else if(edad>=18 && edad<=65) { tresValores=2; } 
+		 * else { tresValores=3; }
+		 */
+
+		int tresValores = edad < 18 ? 1 : (edad > 18 && edad <= 65) ? 2 : 3;
+
+		System.out.println("TresValores vale: " + tresValores);
+
+		int euros = 1;
+		System.out.println("Cuesta " + euros + " euro" + (euros!=1?"s":""));
+	}
+
 	public static void main(String[] args) {
-		
+
 		// ejemploIF();
 		// ejemploIfElse();
 		// ejemploIfElseIfElse();
-		IfElseIfSinelse();
+		// IfElseIfSinelse();
+		// ejemploSwitch();
+		// ejemploTernarias();
 	}
-	
+
 }
