@@ -217,14 +217,13 @@ public class Ejemplos {
 		System.out.print("Introduzca su localidad: ");
 		String localidad = sc.nextLine();
 		System.out.println("Introduzca su salario: ");
-		double salario = Double.parseDouble(sc.nextLine());
+		double salario = Double.parseDouble(sc.next().replace(',','.'));
 		System.out.println("Ingrese cuanto desearía ganar: ");
-		double salarioDeseado = sc.nextDouble();
+		double salarioDeseado = Double.parseDouble(sc.next().replace(',','.'));
 		System.out.println("Hola " + nombre + ", su localidad es: " + localidad + " y usted gana: " + salario + "€"
 				+ " aunque usted quiere ganar: "+salarioDeseado+"€");
 		sc.close(); // Cerrar el Scanner
 	}
-
 	public static void main(String[] args) {
 
 		// ejemplosComentarios();
