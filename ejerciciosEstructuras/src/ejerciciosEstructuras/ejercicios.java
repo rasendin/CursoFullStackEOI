@@ -3,41 +3,41 @@ package ejerciciosEstructuras;
 import java.util.Scanner;
 
 public class ejercicios {
-	
+
 	public static void ejercicio1() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese un número: ");
 		int numero = sc.nextInt();
-		if(numero%2==0) {
+		if (numero % 2 == 0) {
 			System.out.println("El número es par");
 		} else {
 			System.out.println("El número es impar");
 		}
 	}
-	
+
 	public static void ejercicio2() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese un número: ");
 		int numero = sc.nextInt();
-		if(numero%10==0) {
+		if (numero % 10 == 0) {
 			System.out.println("El número es múltiplo de 10");
 		} else {
 			System.out.println("El número no es múltiplo de 10");
 		}
 	}
-	
+
 	public static void ejercicio3() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese un caracter: ");
 		char caracter = sc.next().charAt(0);
-		if(Character.isUpperCase(caracter)) {
+		if (Character.isUpperCase(caracter)) {
 			System.out.println("Es una letra mayúscula");
 		} else {
 			System.out.println("Es una letra minúscula");
 		}
-		
+
 	}
-	
+
 	public static void ejercicio4() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese dos cadenas de texto.\n");
@@ -45,8 +45,8 @@ public class ejercicios {
 		String cadena1 = sc.nextLine();
 		System.out.print("\tCadena 2: ");
 		String cadena2 = sc.nextLine();
-		
-		if(cadena1.equals(cadena2)) {
+
+		if (cadena1.equals(cadena2)) {
 			System.out.println("Los textos son iguales");
 		} else {
 			System.out.println("Los textos son distintos");
@@ -55,19 +55,19 @@ public class ejercicios {
 
 	public static void ejercicio5() {
 		Scanner sc = new Scanner(System.in);
-		int num1,num2;
+		int num1, num2;
 		System.out.print("Ingrese primer número: ");
 		num1 = sc.nextInt();
 		System.out.print("Ingrese segundo número: ");
 		num2 = sc.nextInt();
-		
-		if(num2==0) {
+
+		if (num2 == 0) {
 			System.out.println("No se puede dividir entre 0");
 		} else {
-			System.out.println(num1/num2);
+			System.out.println(num1 / num2);
 		}
 	}
-	
+
 	public static void ejercicio6() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Ingrese el primer número: ");
@@ -76,56 +76,82 @@ public class ejercicios {
 		int num2 = sc.nextInt();
 		System.out.print("Ingrese el tercer número: ");
 		int num3 = sc.nextInt();
-		
-		if(num1>num2 && num1>num3) {
+
+		if (num1 > num2 && num1 > num3) {
 			System.out.println("El número " + num1 + " es el número mayor");
-		} else if(num2>num1 && num2>num3) {
+		} else if (num2 > num1 && num2 > num3) {
 			System.out.println("El número " + num2 + " es el número mayor");
-		} else if (num3>num2 && num3>num1) {
+		} else if (num3 > num2 && num3 > num1) {
 			System.out.println("El número " + num3 + " es el número mayor");
 		}
 	}
-	
+
 	public static void ejercicio7() {
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.print("Ingrese una hora (0-23): ");
 		int hora = sc.nextInt();
 		System.out.print("Ingrese los minutos (0-59): ");
 		int minutos = sc.nextInt();
 		System.out.print("Ingrese los segundos (0-59): ");
 		int segundos = sc.nextInt();
-		
-		if(hora>23) {
+
+		if (hora > 23) {
 			System.out.println("La hora no puede ser mayor de un número 23");
-		} else if(minutos>59 || minutos<0) {
+		} else if (minutos > 59 || minutos < 0) {
 			System.out.println("Los minutos no puede ser un número mayor de 59");
-		} else if(segundos>59 || minutos<0) {
+		} else if (segundos > 59 || minutos < 0) {
 			System.out.println("Los segundos no puede ser un número mayor de 59");
 		} else {
-			System.out.printf("%02d:%02d:%02d",hora,minutos,segundos);
+			System.out.printf("%02d:%02d:%02d", hora, minutos, segundos);
 		}
 	}
-	
+
 	public static void ejercicio8() {
 		int numero = 12;
-		System.out.println(numero%2==0?"El número es par":"El número es impar");
+		System.out.println((numero % 2 == 0) ? "El número es par" : "El número es impar");
 	}
-	
+
 	public static void ejercicio9() {
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ingrese el número de un mes: ");
+		int mes = sc.nextInt();
+		switch (mes) {
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12: 
+				System.out.println("El mes tiene 31 días");
+				break;
+			case 4: 
+			case 6:
+			case 9:
+			case 11:
+				System.out.println("El mes tiene 30 días");
+				break;
+			case 2:
+				System.out.println("El mes tiene 28 días");
+				break;
+			default: 
+				System.out.println("El número de mes introducido no es correcto");
+		}
+		sc.close();
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		// ejercicio1();
 		// ejercicio2();
 		// ejercicio3();
 		// ejercicio4();
 		// ejercicio5();
 		// ejercicio6();
-		// ejercicio7();
-		ejercicio8();
+		 ejercicio7();
+		// ejercicio8();
+//		ejercicio9();
 	}
 
 }

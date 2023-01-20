@@ -134,6 +134,56 @@ public class Estructuras {
 		int euros = 1;
 		System.out.println("Cuesta " + euros + " euro" + (euros!=1?"s":""));
 	}
+	
+	/*
+	 * Este programa se ejecuta hasta que el usuario adivine la contraseña
+	 */
+	public static void ejemploWhile1() {
+		Scanner sc = new Scanner(System.in);
+		String password = "1234";
+		boolean adivina = false;
+		while(!adivina) {	// (adivina == false)
+			System.out.print("Introduzca la contraseña: ");
+			String respuesta = sc.nextLine();
+			if(respuesta.equals(password)) {
+				adivina = true;
+			} else {
+				System.out.println("Contraseña incorrecta\n");
+			}
+		}
+		System.out.println("Contraseña correcta");
+		sc.close();
+	}
+	
+	/*
+	 * El programa permite adivinar la password en 3 oportunidades
+	 */
+	
+	public static void ejemploWhile2() {
+		Scanner sc = new Scanner(System.in);
+		String password = "1234";
+		int intentos = 0;
+		boolean adivina = false;
+		while(!adivina && intentos<3) {	// (adivina == false)
+			System.out.print("Introduzca la contraseña (Quedan " + (3-intentos) + " intentos): ");
+			intentos++;
+			String respuesta = sc.nextLine();
+			if(respuesta.equals(password)) {
+				adivina = true;
+			} else {
+				System.out.println("Contraseña incorrecta\n");
+			}
+		}
+		
+		//System.out.println(adivina?"Acertaste":"Limite de intentos excedido");
+		
+		if(adivina) {
+			System.out.println("Acertaste");
+		} else {
+			System.out.println("Limite de intentos excedido");
+		}
+		sc.close();
+	}
 
 	public static void main(String[] args) {
 
@@ -143,6 +193,8 @@ public class Estructuras {
 		// IfElseIfSinelse();
 		// ejemploSwitch();
 		// ejemploTernarias();
+		// ejemploWhile1();
+		ejemploWhile2();
 	}
 
 }
