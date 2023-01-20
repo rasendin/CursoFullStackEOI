@@ -140,6 +140,40 @@ public class ejercicios {
 		}
 		sc.close();
 	}
+	
+	public static void ejercicio10() {
+		Scanner sc = new Scanner (System.in);  // Para leer datos por pantalla
+		System.out.println("Introduzca una letra por teclado:");  // Petición al usuario que escriba
+		char letra = sc.nextLine().charAt(0);  // guarda en cadena lo que el usuario escriba en la pantalla
+		if(Character.isDigit(letra)) {  // Si es un dígito
+			System.out.println("La letra es una cifra numérica");
+		} else if(letra=='.' || letra==',' || letra==';' || letra==':') {
+			System.out.println("La letra es un signo de puntuación");
+		} else	{
+			System.out.println("Es otro caracter");
+		}	
+		sc.close();
+	}
+	
+	public static void ejercicio10b() { // Java 17
+		Scanner sc = new Scanner (System.in);  // Para leer datos por pantalla
+		System.out.println("Introduzca una letra por teclado:");  // Petición al usuario que escriba
+		char letra = sc.nextLine().charAt(0);  // guarda en cadena lo que el usuario escriba en la pantalla
+		switch(letra) {
+		case '0','1','2','3','4','5','6','7','8','9' -> System.out.println("La letra es una cifra numérica");
+		case '.',',',';',':' ->	System.out.println("La letra es un signo de puntuación");
+		default -> System.out.println("Es otro caracter");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio13() {
+		int numero = 20;
+		while(numero>0) {
+			System.out.println(numero);
+			numero--; // Decremento necesario para que el bucle no sea infinito
+		}
+	}
 
 	public static void main(String[] args) {
 
@@ -149,9 +183,12 @@ public class ejercicios {
 		// ejercicio4();
 		// ejercicio5();
 		// ejercicio6();
-		 ejercicio7();
+		// ejercicio7();
 		// ejercicio8();
-//		ejercicio9();
+		// ejercicio9();
+		// ejercicio10();
+		// ejercicio10b();
+		ejercicio13();
 	}
 
 }
