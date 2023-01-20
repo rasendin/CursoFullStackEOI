@@ -174,6 +174,21 @@ public class ejercicios {
 			numero--; // Decremento necesario para que el bucle no sea infinito
 		}
 	}
+	
+	public static void ejercicio14() {
+		Scanner sc = new Scanner(System.in);
+		int num = 0;
+		int numUser;
+		do {
+			System.out.print("Introduzca un número (cuando desee parar, solamente ingrese el 0): ");
+			numUser = sc.nextInt();
+			System.out.println(num+=numUser);
+		} while (numUser!=0);
+		if(numUser==0) {
+			System.out.println("El total sumado es: " + num);
+		}
+		sc.close();
+	}
 
 	public static void main(String[] args) {
 
@@ -188,7 +203,8 @@ public class ejercicios {
 		// ejercicio9();
 		// ejercicio10();
 		// ejercicio10b();
-		ejercicio13();
+		// ejercicio13();
+		ejercicio14();
 	}
 
 }

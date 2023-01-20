@@ -135,6 +135,19 @@ public class Estructuras {
 		System.out.println("Cuesta " + euros + " euro" + (euros!=1?"s":""));
 	}
 	
+	public static void ejemploAmbitosVariables() {
+		int numero = 5;
+		int edad = 20;
+		
+		if(edad>18) {
+			//int numero=3;  // En Java da error
+			int valor = 4;
+			System.out.println(numero);
+		}
+		System.out.println("hola");
+		// System.out.println(valor);  // Da error porque la variable no existe fuera del if
+	}
+	
 	/*
 	 * Este programa se ejecuta hasta que el usuario adivine la contraseña
 	 */
@@ -178,7 +191,7 @@ public class Estructuras {
 		//System.out.println(adivina?"Acertaste":"Limite de intentos excedido");
 		
 		if(adivina) {
-			System.out.println("Acertaste");
+			System.out.println("Contraseña correcta");
 		} else {
 			System.out.println("Limite de intentos excedido");
 		}
@@ -193,6 +206,7 @@ public class Estructuras {
 		// IfElseIfSinelse();
 		// ejemploSwitch();
 		// ejemploTernarias();
+		// ejemploAmbitosVariables();
 		// ejemploWhile1();
 		ejemploWhile2();
 	}
