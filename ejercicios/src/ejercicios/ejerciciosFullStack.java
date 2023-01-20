@@ -206,7 +206,7 @@ public class ejerciciosFullStack {
 		// ejercicio1();
 		// ejercicio2();
 		// ejercicio3();
-		// ejercicio4();
+		 ejercicio4();
 		// ejercicio5();
 		// ejercicio6();
 		// ejercicio7();
@@ -216,7 +216,7 @@ public class ejerciciosFullStack {
 		// ejercicio11();
 		// ejercicio12();
 		// ejercicio13();
-		ejercicio15();
+		// ejercicio15();
 	}
 
 }

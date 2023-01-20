@@ -68,6 +68,54 @@ public class ejercicios {
 		}
 	}
 	
+	public static void ejercicio6() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ingrese el primer número: ");
+		int num1 = sc.nextInt();
+		System.out.print("Ingrese el segundo número: ");
+		int num2 = sc.nextInt();
+		System.out.print("Ingrese el tercer número: ");
+		int num3 = sc.nextInt();
+		
+		if(num1>num2 && num1>num3) {
+			System.out.println("El número " + num1 + " es el número mayor");
+		} else if(num2>num1 && num2>num3) {
+			System.out.println("El número " + num2 + " es el número mayor");
+		} else if (num3>num2 && num3>num1) {
+			System.out.println("El número " + num3 + " es el número mayor");
+		}
+	}
+	
+	public static void ejercicio7() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Ingrese una hora (0-23): ");
+		int hora = sc.nextInt();
+		System.out.print("Ingrese los minutos (0-59): ");
+		int minutos = sc.nextInt();
+		System.out.print("Ingrese los segundos (0-59): ");
+		int segundos = sc.nextInt();
+		
+		if(hora>23) {
+			System.out.println("La hora no puede ser mayor de un número 23");
+		} else if(minutos>59 || minutos<0) {
+			System.out.println("Los minutos no puede ser un número mayor de 59");
+		} else if(segundos>59 || minutos<0) {
+			System.out.println("Los segundos no puede ser un número mayor de 59");
+		} else {
+			System.out.printf("%02d:%02d:%02d",hora,minutos,segundos);
+		}
+	}
+	
+	public static void ejercicio8() {
+		int numero = 12;
+		System.out.println(numero%2==0?"El número es par":"El número es impar");
+	}
+	
+	public static void ejercicio9() {
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		// ejercicio1();
@@ -75,6 +123,9 @@ public class ejercicios {
 		// ejercicio3();
 		// ejercicio4();
 		// ejercicio5();
+		// ejercicio6();
+		// ejercicio7();
+		ejercicio8();
 	}
 
 }
