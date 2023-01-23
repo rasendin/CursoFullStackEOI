@@ -1,6 +1,8 @@
 package ejerciciosEstructuras;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ejercicios {
 
@@ -167,8 +169,48 @@ public class ejercicios {
 		sc.close();
 	}
 	
+	public static void ejercicio12() {
+		Scanner sc = new Scanner(System.in);
+		double precioEntrada = 50;
+		final double MENOR_EDAD = 0.25;
+		final double DESCUENTO_SOCIO = 0.40;
+		final double DESCUENTO_JUBILADO = 0.75;
+		System.out.print("Introduzca su edad: ");
+		int edad = sc.nextInt();
+		sc.nextLine();
+		
+		if(edad<18) {
+			precioEntrada = precioEntrada * (1-MENOR_EDAD);	// precio * 0.75
+			System.out.println("Su entrada vale " + precioEntrada + " euros");
+		} else if(edad>=18 && edad<65) {
+			System.out.println("¿Es usted socio?");
+			String respuesta = sc.nextLine();
+			// Solución con expresión regular
+			Pattern regex = Pattern.compile("^s[iíÍ]?$", Pattern.CASE_INSENSITIVE);			
+			Matcher m = regex.matcher(respuesta);
+			if(m.matches()) {
+				precioEntrada = precioEntrada * (1 - DESCUENTO_SOCIO);
+			}
+		} else {
+			precioEntrada = precioEntrada * (1 - DESCUENTO_JUBILADO);
+		}
+		System.out.println("Su precio es: " + precioEntrada);
+		sc.close();
+	}
+	
 	public static void ejercicio13() {
 		int numero = 20;
+		while(numero>0) {
+			System.out.println(numero);
+			numero--; // Decremento necesario para que el bucle no sea infinito
+		}
+	}
+	
+	public static void ejercicio13b() {
+		int numero = 20;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduzca el número a decrementar: ");
+		numero = sc.nextInt();
 		while(numero>0) {
 			System.out.println(numero);
 			numero--; // Decremento necesario para que el bucle no sea infinito
@@ -204,7 +246,9 @@ public class ejercicios {
 		// ejercicio10();
 		// ejercicio10b();
 		// ejercicio13();
-		ejercicio14();
+		// ejercicio14();
+		// ejercicio13b();
+		ejercicio12();
 	}
 
 }

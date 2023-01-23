@@ -1,5 +1,7 @@
 package estructuras;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Estructuras {
@@ -197,7 +199,51 @@ public class Estructuras {
 		}
 		sc.close();
 	}
+	
+	/*
+	 * El programa permite adivinar la password en 3 oportunidades
+	 */
+	
+	public static void ejemploDoWhile1() {
+		Scanner sc = new Scanner(System.in);
+		String password = "1234";
+		int intentos = 0;
+		boolean adivina = false;
+		do {	// (adivina == false)
+			System.out.print("Introduzca la contraseña (Quedan " + (3-intentos) + " intentos): ");
+			intentos++;
+			String respuesta = sc.nextLine();
+			if(respuesta.equals(password)) {
+				adivina = true;
+			} else {
+				System.out.println("Contraseña incorrecta\n");
+			}
+		} while(!adivina && intentos<3);
+		
+		//System.out.println(adivina?"Contraseña":"Limite de intentos excedido");
+		
+		if(adivina) {
+			System.out.println("Contraseña correcta");
+		} else {
+			System.out.println("Limite de intentos excedido");
+		}
+		sc.close();
+	}
 
+	public static void acaboCurso() {
+		int diasQuedan = 0;
+		LocalDate fecha = LocalDate.now();	// dia de hoy (23/01/2023)
+		while(fecha.isBefore(LocalDate.parse("2023-03-31"))) {
+			if(fecha.getDayOfWeek()!=DayOfWeek.SATURDAY && fecha.getDayOfWeek()!=DayOfWeek.SUNDAY) {
+				System.out.println(fecha);
+				diasQuedan++;
+			}
+			fecha = fecha.plusDays(1);
+		}
+		System.out.println("Has acabado el curso");
+		System.out.println("Te quedan " + diasQuedan + " días");
+	}
+	
 	public static void main(String[] args) {
 
 		// ejemploIF();
@@ -208,7 +254,9 @@ public class Estructuras {
 		// ejemploTernarias();
 		// ejemploAmbitosVariables();
 		// ejemploWhile1();
-		ejemploWhile2();
+		// ejemploWhile2();
+		// ejemploDoWhile1();
+		acaboCurso();
 	}
 
 }
