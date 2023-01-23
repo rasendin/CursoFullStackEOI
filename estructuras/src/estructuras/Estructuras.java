@@ -149,7 +149,7 @@ public class Estructuras {
 	}
 	
 	/*
-	 * Este programa se ejecuta hasta que el usuario adivine la contraseña
+	 * Este programa se ejecuta hasta que el usuario introduzca la contraseña
 	 */
 	public static void ejemploWhile1() {
 		Scanner sc = new Scanner(System.in);
@@ -188,7 +188,7 @@ public class Estructuras {
 			}
 		}
 		
-		//System.out.println(adivina?"Acertaste":"Limite de intentos excedido");
+		//System.out.println(adivina?"Contraseña":"Limite de intentos excedido");
 		
 		if(adivina) {
 			System.out.println("Contraseña correcta");
