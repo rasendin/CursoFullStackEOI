@@ -2,6 +2,8 @@ package estructuras;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Estructuras {
@@ -115,18 +117,15 @@ public class Estructuras {
 		System.out.println(edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad");
 
 		/*
-		 * int descuento; if(edad>18) { descuento=5; }
-		 * else
-		 * { descuento=20; }
+		 * int descuento; if(edad>18) { descuento=5; } else { descuento=20; }
 		 */
 
 		int descuento = edad >= 18 ? 5 : 20;
 		System.out.println(descuento);
 
 		/*
-		 * int tresValores; if(edad<18) { tresValores=1; }
-		 *  else if(edad>=18 && edad<=65) { tresValores=2; } 
-		 * else { tresValores=3; }
+		 * int tresValores; if(edad<18) { tresValores=1; } else if(edad>=18 && edad<=65)
+		 * { tresValores=2; } else { tresValores=3; }
 		 */
 
 		int tresValores = edad < 18 ? 1 : (edad > 18 && edad <= 65) ? 2 : 3;
@@ -134,22 +133,23 @@ public class Estructuras {
 		System.out.println("TresValores vale: " + tresValores);
 
 		int euros = 1;
-		System.out.println("Cuesta " + euros + " euro" + (euros!=1?"s":""));
+		System.out.println("Cuesta " + euros + " euro" + (euros != 1 ? "s" : ""));
 	}
-	
+
 	public static void ejemploAmbitosVariables() {
 		int numero = 5;
 		int edad = 20;
-		
-		if(edad>18) {
-			//int numero=3;  // En Java da error
+
+		if (edad > 18) {
+			// int numero=3; // En Java da error
 			int valor = 4;
 			System.out.println(numero);
 		}
 		System.out.println("hola");
-		// System.out.println(valor);  // Da error porque la variable no existe fuera del if
+		// System.out.println(valor); // Da error porque la variable no existe fuera del
+		// if
 	}
-	
+
 	/*
 	 * Este programa se ejecuta hasta que el usuario introduzca la contraseña
 	 */
@@ -157,10 +157,10 @@ public class Estructuras {
 		Scanner sc = new Scanner(System.in);
 		String password = "1234";
 		boolean adivina = false;
-		while(!adivina) {	// (adivina == false)
+		while (!adivina) { // (adivina == false)
 			System.out.print("Introduzca la contraseña: ");
 			String respuesta = sc.nextLine();
-			if(respuesta.equals(password)) {
+			if (respuesta.equals(password)) {
 				adivina = true;
 			} else {
 				System.out.println("Contraseña incorrecta\n");
@@ -169,60 +169,30 @@ public class Estructuras {
 		System.out.println("Contraseña correcta");
 		sc.close();
 	}
-	
+
 	/*
 	 * El programa permite adivinar la password en 3 oportunidades
 	 */
-	
+
 	public static void ejemploWhile2() {
 		Scanner sc = new Scanner(System.in);
 		String password = "1234";
 		int intentos = 0;
 		boolean adivina = false;
-		while(!adivina && intentos<3) {	// (adivina == false)
-			System.out.print("Introduzca la contraseña (Quedan " + (3-intentos) + " intentos): ");
+		while (!adivina && intentos < 3) { // (adivina == false)
+			System.out.print("Introduzca la contraseña (Quedan " + (3 - intentos) + " intentos): ");
 			intentos++;
 			String respuesta = sc.nextLine();
-			if(respuesta.equals(password)) {
+			if (respuesta.equals(password)) {
 				adivina = true;
 			} else {
 				System.out.println("Contraseña incorrecta\n");
 			}
 		}
-		
-		//System.out.println(adivina?"Contraseña":"Limite de intentos excedido");
-		
-		if(adivina) {
-			System.out.println("Contraseña correcta");
-		} else {
-			System.out.println("Limite de intentos excedido");
-		}
-		sc.close();
-	}
-	
-	/*
-	 * El programa permite adivinar la password en 3 oportunidades
-	 */
-	
-	public static void ejemploDoWhile1() {
-		Scanner sc = new Scanner(System.in);
-		String password = "1234";
-		int intentos = 0;
-		boolean adivina = false;
-		do {	// (adivina == false)
-			System.out.print("Introduzca la contraseña (Quedan " + (3-intentos) + " intentos): ");
-			intentos++;
-			String respuesta = sc.nextLine();
-			if(respuesta.equals(password)) {
-				adivina = true;
-			} else {
-				System.out.println("Contraseña incorrecta\n");
-			}
-		} while(!adivina && intentos<3);
-		
-		//System.out.println(adivina?"Contraseña":"Limite de intentos excedido");
-		
-		if(adivina) {
+
+		// System.out.println(adivina?"Contraseña":"Limite de intentos excedido");
+
+		if (adivina) {
 			System.out.println("Contraseña correcta");
 		} else {
 			System.out.println("Limite de intentos excedido");
@@ -230,11 +200,68 @@ public class Estructuras {
 		sc.close();
 	}
 
+	/*
+	 * El programa permite adivinar la password en 3 oportunidades
+	 */
+
+	public static void ejemploDoWhile1() {
+		Scanner sc = new Scanner(System.in);
+		String password = "1234";
+		int intentos = 0;
+		boolean adivina = false;
+		do { // (adivina == false)
+			System.out.print("Introduzca la contraseña (Quedan " + (3 - intentos) + " intentos): ");
+			intentos++;
+			String respuesta = sc.nextLine();
+			if (respuesta.equals(password)) {
+				adivina = true;
+			} else {
+				System.out.println("Contraseña incorrecta\n");
+			}
+		} while (!adivina && intentos < 3);
+
+		// System.out.println(adivina?"Contraseña":"Limite de intentos excedido");
+
+		if (adivina) {
+			System.out.println("Contraseña correcta");
+		} else {
+			System.out.println("Limite de intentos excedido");
+		}
+		sc.close();
+	}
+
+	public static void ejemploDoWhile2() {
+		Scanner sc = new Scanner(System.in);
+		int opcion = -1; // Le damos un valor que no aparezca en el menú
+		do {
+			// Impresión de menú
+			System.out.println("1. Primera opción");
+			System.out.println("2. Segunda opción");
+			System.out.println("3. Tercera opción");
+			System.out.println("4. Cuarta opción");
+			System.out.println("0. Salir");
+			System.out.println("Elige una opción");
+			// Obtención de la opción
+			opcion = sc.nextInt();
+			sc.nextLine();
+			// Tratamiento de la opción
+			switch (opcion) {
+			case 1 -> System.out.println("Has elegido la primera opción");
+			case 2 -> System.out.println("Has elegido la segunda opción");
+			case 3 -> System.out.println("Has elegido la tercera opción");
+			case 4 -> System.out.println("Has elegido la cuarta opción");
+			case 0 -> System.out.println("¡Gracias por usar nuestro programa!");
+			default -> System.out.println("La opción seleccionada no es correcta");
+			}
+		} while (opcion != 0);
+		sc.close();
+	}
+
 	public static void acaboCurso() {
 		int diasQuedan = 0;
-		LocalDate fecha = LocalDate.now();	// dia de hoy (23/01/2023)
-		while(fecha.isBefore(LocalDate.parse("2023-03-31"))) {
-			if(fecha.getDayOfWeek()!=DayOfWeek.SATURDAY && fecha.getDayOfWeek()!=DayOfWeek.SUNDAY) {
+		LocalDate fecha = LocalDate.now(); // dia de hoy (23/01/2023)
+		while (fecha.isBefore(LocalDate.parse("2023-03-31"))) {
+			if (fecha.getDayOfWeek() != DayOfWeek.SATURDAY && fecha.getDayOfWeek() != DayOfWeek.SUNDAY) {
 				System.out.println(fecha);
 				diasQuedan++;
 			}
@@ -243,7 +270,53 @@ public class Estructuras {
 		System.out.println("Has acabado el curso");
 		System.out.println("Te quedan " + diasQuedan + " días");
 	}
-	
+
+	public static void imprimirHoraFecha() {
+		// Java 8
+		LocalDate fecha = LocalDate.now();
+		LocalTime hora = LocalTime.now();
+		LocalDateTime fechaHora = LocalDateTime.now();
+		System.out.println(fecha);
+		System.out.println(hora);
+		System.out.println(fechaHora);
+	}
+
+	public static void ejemploFor1() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Repetición número " + (i));
+		}
+	}
+
+	public static void ejemploFor1b() {
+		int i = 0;
+		for (; i < 10;) {
+			System.out.println("Repetición número " + (i));
+		}
+	}
+	public static void ejemploFor1c() {
+		for (int i = 0; i < 10; ++i) {
+			System.out.println("Repetición número " + (i));
+		}
+	}
+
+	public static void ejemploFor2() { // Bucle infinito
+		for (;;) {
+			System.out.println("Repetición número ");
+		}
+	}
+
+	public static void ejemploFor3() { // Bucle infinito
+		for (int i = 10; i > 0; i--) {
+			System.out.println("Repetición número " + i);
+		}
+	}
+
+	public static void ejemploFor4() { // Bucle infinito
+		for (int i = 0; i < 1000; i=i+2) {
+			System.out.println("Repetición número " + i);
+		}
+	}
+
 	public static void main(String[] args) {
 
 		// ejemploIF();
@@ -256,7 +329,15 @@ public class Estructuras {
 		// ejemploWhile1();
 		// ejemploWhile2();
 		// ejemploDoWhile1();
-		acaboCurso();
+		// ejemploDoWhile2();
+		// acaboCurso();
+		// imprimirHoraFecha();
+		 ejemploFor1();
+		// ejemploFor1b();
+		// ejemploFor1c();
+		// ejemploFor2();
+		// ejemploFor3();
+		// ejemploFor4();
 	}
 
 }

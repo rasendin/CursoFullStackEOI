@@ -143,6 +143,43 @@ public class ejercicios {
 		sc.close();
 	}
 	
+	public static void ejercicio9b() {  // Java 17
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Introduzca el número del mes:");
+		int mes = sc.nextInt();
+		switch(mes) {
+		case 1,3,5,7,8,10,12:
+			System.out.print("El mes tiene 31 días y es ");
+			if(mes==1)
+				System.out.println(" Enero");
+			else if(mes==3)
+				System.out.println(" Marzo"); //...
+			break;
+		case 4,6,9,11:
+			System.out.println("El mes tiene 30 días y es " + ((mes==4)?"Abril":(mes==6)?"Junio":(mes==9)?"Septiembre":"Noviembre"));
+			break;
+		case 2:
+			System.out.println("El mes tiene 30 días y es Febrero");
+			break;
+		default:
+			System.out.println("El número de mes introducido no es correcto");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio9c() {  // Java 17
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Introduzca el número del mes:");
+		int mes = sc.nextInt();
+		switch(mes) {
+		case 1,3,5,7,8,10,12 -> System.out.println("El mes tiene 31 días");
+		case 4,6,9,11 -> System.out.println("El mes tiene 30 días y es " + ((mes==4)?"Abril":(mes==6)?"Junio":(mes==9)?"Septiembre":"Noviembre"));
+		case 2 -> System.out.println("El mes tiene 30 días y es Febrero");
+		default -> System.out.println("El número de mes introducido no es correcto");
+		}
+		sc.close();
+	}
+	
 	public static void ejercicio10() {
 		Scanner sc = new Scanner (System.in);  // Para leer datos por pantalla
 		System.out.println("Introduzca una letra por teclado:");  // Petición al usuario que escriba
@@ -272,7 +309,57 @@ public class ejercicios {
 		}
 		sc.close();
 	}
-
+	
+	/*
+	 * Decir si un número es primo o no
+	 * Primo es si solamente es divisible entre 1 y por sí mismo (ej: 2,3,5,7,13, etc...)
+	 */
+	
+	public static void ejercicio21() {	// Resuleto con for
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduzca un número: ");
+		int numero = Integer.parseInt(sc.nextLine());	// Para coger un número y asignarlo a una variable
+		
+		for (int i = 1; i <= numero; i++) {
+			if(numero%i==0) {
+				System.out.println("El número " + i + " es divisible de " + numero);
+			}
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio21b() {	// Resuleto con while
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduzca un número: ");
+		int numero = sc.nextInt();
+		sc.nextLine();
+		int i=1;
+		while(i<numero) {
+			if(numero%i==0) {
+				System.out.println("El número " + i + " es divisible de " + numero);
+			}
+			i++;
+		}
+	}
+	
+	public static void ejercicio21Primos() {	// Resuleto con for
+		int contador = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduzca un número: ");
+		int numero = Integer.parseInt(sc.nextLine());	// Para coger un número y asignarlo a una variable
+		
+		for (int i = 1; i <= numero; i++) {
+			if(numero%i==0) {
+				contador++;
+			}
+		}
+		if(contador==2) {
+			System.out.println("El número es primo");
+		} else {
+			System.out.println("El número no es primo");
+		}
+		sc.close();
+	}
 	public static void main(String[] args) {
 
 		// ejercicio1();
@@ -284,13 +371,18 @@ public class ejercicios {
 		// ejercicio7();
 		// ejercicio8();
 		// ejercicio9();
+		// ejercicio9b()
+		// ejercicio9c();
 		// ejercicio10();
 		// ejercicio10b();
 		// ejercicio13();
 		// ejercicio14();
 		// ejercicio13b();
 		// ejercicio12();
-		ejercicio12Grupo();
+		// ejercicio12Grupo();
+		// ejercicio21();
+		 ejercicio21b();
+		// ejercicio21Primos();
 	}
 
 }
