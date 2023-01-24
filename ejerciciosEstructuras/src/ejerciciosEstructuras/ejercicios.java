@@ -353,7 +353,50 @@ public class ejercicios {
 				contador++;
 			}
 		}
-		if(contador==2) {
+		if(contador==2 || numero == 1) {
+			System.out.println("El número es primo");
+		} else {
+			System.out.println("El número no es primo");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio21PrimosConBooleano() {	
+		int contador = 0;
+		boolean esPrimo = true;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduzca un número: ");
+		int numero = Integer.parseInt(sc.nextLine());	// Para coger un número y asignarlo a una variable
+		
+		for (int i = 2; i < numero/2 && esPrimo; i++) {
+			if(numero%i==0) {
+				esPrimo=false;
+			}
+		}
+		if(esPrimo) {
+			System.out.println("El número es primo");
+		} else {
+			System.out.println("El número no es primo");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio21PrimosConBreak() {	
+		int contador = 0;
+		boolean esPrimo = true;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduzca un número: ");
+		int numero = Integer.parseInt(sc.nextLine());	// Para coger un número y asignarlo a una variable
+		
+		for (int i = 2; i<numero/2; i++) {
+			contador++;
+			if(numero%i==0) {
+				esPrimo=false;
+				break;
+			}
+		}
+		System.out.println("Número de veces que se ha ejecutado el bucle for: " + contador);
+		if(esPrimo) {
 			System.out.println("El número es primo");
 		} else {
 			System.out.println("El número no es primo");
@@ -381,8 +424,11 @@ public class ejercicios {
 		// ejercicio12();
 		// ejercicio12Grupo();
 		// ejercicio21();
-		 ejercicio21b();
+		// ejercicio21b();
 		// ejercicio21Primos();
+		// ejercicio21PrimosConBooleano();
+		ejercicio21PrimosConBreak();
+		 
 	}
 
 }

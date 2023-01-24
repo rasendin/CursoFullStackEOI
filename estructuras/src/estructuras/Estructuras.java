@@ -305,18 +305,31 @@ public class Estructuras {
 		}
 	}
 
-	public static void ejemploFor3() { // Bucle infinito
+	public static void ejemploFor3() { // For hacia atras
 		for (int i = 10; i > 0; i--) {
 			System.out.println("Repetición número " + i);
 		}
 	}
 
-	public static void ejemploFor4() { // Bucle infinito
+	public static void ejemploFor4() { // for con salto de más de 1
 		for (int i = 0; i < 1000; i=i+2) {
 			System.out.println("Repetición número " + i);
 		}
 	}
 
+	public static void ejemploContinue() {
+		Scanner sc = new Scanner(System.in);
+		for(int i = 0; i < 5; i++) {
+			System.out.print("Introduzca la contraseña: ");
+			String password = sc.nextLine();
+			if(password.contains("kk")) {
+				continue;
+			}
+			System.out.println("Contraseña introducida correctamente");
+		}
+		sc.close();
+	}
+	
 	public static void main(String[] args) {
 
 		// ejemploIF();
@@ -332,12 +345,13 @@ public class Estructuras {
 		// ejemploDoWhile2();
 		// acaboCurso();
 		// imprimirHoraFecha();
-		 ejemploFor1();
+		// ejemploFor1();
 		// ejemploFor1b();
 		// ejemploFor1c();
 		// ejemploFor2();
 		// ejemploFor3();
 		// ejemploFor4();
+		 ejemploContinue();
 	}
 
 }
