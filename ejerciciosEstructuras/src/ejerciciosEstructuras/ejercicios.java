@@ -392,7 +392,7 @@ public class ejercicios {
 			contador++;
 			if(numero%i==0) {
 				esPrimo=false;
-				break;
+				break;	// No recomendable salvo excepciones
 			}
 		}
 		System.out.println("Número de veces que se ha ejecutado el bucle for: " + contador);
@@ -403,6 +403,7 @@ public class ejercicios {
 		}
 		sc.close();
 	}
+	
 	public static void main(String[] args) {
 
 		// ejercicio1();

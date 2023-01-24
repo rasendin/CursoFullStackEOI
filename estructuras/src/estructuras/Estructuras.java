@@ -293,6 +293,7 @@ public class Estructuras {
 			System.out.println("Repetición número " + (i));
 		}
 	}
+
 	public static void ejemploFor1c() {
 		for (int i = 0; i < 10; ++i) {
 			System.out.println("Repetición número " + (i));
@@ -312,24 +313,80 @@ public class Estructuras {
 	}
 
 	public static void ejemploFor4() { // for con salto de más de 1
-		for (int i = 0; i < 1000; i=i+2) {
+		for (int i = 0; i < 1000; i = i + 2) {
 			System.out.println("Repetición número " + i);
 		}
 	}
 
-	public static void ejemploContinue() {
+	public static void ejemploBreak() {
 		Scanner sc = new Scanner(System.in);
-		for(int i = 0; i < 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			System.out.print("Introduzca la contraseña: ");
 			String password = sc.nextLine();
-			if(password.contains("kk")) {
-				continue;
+			if (password.contains("kk")) {
+				break; // Si encuentra una palabra con "kk" ya no ejecuta más el bucle
 			}
 			System.out.println("Contraseña introducida correctamente");
 		}
 		sc.close();
 	}
+
+	public static void ejemploContinue() {
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < 5; i++) {
+			System.out.print("Introduzca la contraseña: ");
+			String password = sc.nextLine();
+			if (password.contains("kk")) {
+				continue; // Si encuentra una palabra con "kk" ejecuta todo el bucle pero no lo que queda
+							// detrás del continue en esa iteración
+			}
+			// No se ejecuta si se ha ejecutado el continue
+			System.out.println("Contraseña introducida correctamente");
+		}
+		sc.close();
+	}
 	
+	/*
+	 * Vemos las tablas del 1 al 5 con sus 10 números
+	 */
+	
+	public static void ejemploForAnidadosTablasMultiplicar() {
+		for (int tabla = 1; tabla <= 5; tabla++) {
+			for (int num = 1; num <= 10; num++) {
+				System.out.println(tabla + " x " + num + " = " + (tabla * num));
+			}
+		}
+	}
+	
+	/*
+	 * Vemos las tablas del 1 al 5 con sus 10 números pero con una cabecera al comienzo de cada tabla
+	 */
+	
+	public static void ejemploForAnidadosTablasMultiplicarB() {
+		for (int tabla = 1; tabla <= 5; tabla++) {
+			System.out.println("Comienzo de la tabla del " + tabla);
+			for (int num = 1; num <= 10; num++) {
+				System.out.println(tabla + " x " + num + " = " + (tabla * num));
+			}
+		}
+	}
+	
+	public static void ejemploForAnidadosTablasMultiplicarC() {
+		for (int tabla = 1; tabla <= 5; tabla++) {
+			System.out.println("Comienzo de la tabla del " + tabla);
+			for (int num = 1; num <= 10; num++) {
+				System.out.println(tabla + " x " + num + " = " + (tabla * num));
+			}
+			System.out.println("Fin de la tabla del " + tabla);
+		}
+	}
+	
+	public static void ejemploForComplejo() {
+			for (int i = 0, j = 10; i <= 10 && j > 5; i++, j--) {	// 0+10, 1+9, 2+8, 3+7, 4+6
+				System.out.println(i + " + " + j + " = " + (i+j));
+			}
+	}
+
 	public static void main(String[] args) {
 
 		// ejemploIF();
@@ -351,7 +408,12 @@ public class Estructuras {
 		// ejemploFor2();
 		// ejemploFor3();
 		// ejemploFor4();
-		 ejemploContinue();
+		// ejemploBreak();
+		// ejemploContinue();
+		// ejemploForAnidadosTablasMultiplicar();
+		// ejemploForAnidadosTablasMultiplicarB();
+		// ejemploForAnidadosTablasMultiplicarC();
+		ejemploForComplejo();
 	}
 
 }
