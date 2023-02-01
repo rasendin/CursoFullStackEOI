@@ -5,6 +5,21 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class ArraysEjemplos {
+	
+	public static void ejemploDeclaraciones() {
+		// Java es un lenguaje base 0, siempre la primera posición es la 0
+		// la última sera el número-1
+		int[] numeros; // Declarar la variable
+		numeros = new int[5]; // Asignar memoria para poder trabajar con ella
+		int[] nums = new int[5]; // Declaración y asignación en la misma línea. Lo más habitual
+		// Si a nums no le doy valores a los números, todos tienen 0.
+		numeros[0] = 12; // Inicializar valores
+		numeros[1] = 23;
+		numeros[2] = 53;
+		numeros[3] = 5;
+		numeros[4] = 92;
+		int[] numeros2 = { 12, 23, 53, 5, 92 }; // Declarar la variable y asignarle directamente valores.
+	}
 
 	public static void ejemploRecorrido() {
 		int[] numeros = { 12, 23, 53, 5, 92 };
@@ -155,7 +170,8 @@ public class ArraysEjemplos {
 	}
 
 	public static void main(String[] args) {
-
+		
+		// ejemploDeclaraciones();
 		// ejemploRecorrido();
 		// ejemploBusquedas();
 		// ejemploBusquedaFuncional();
@@ -164,7 +180,7 @@ public class ArraysEjemplos {
 		// ejemploStringJoin();
 		// eliminarUnElementoArray();
 		// ordenarArray();
-		ordenarInverso();
+		// ordenarInverso();
 	}
 
 }
