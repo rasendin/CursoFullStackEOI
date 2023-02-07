@@ -1,9 +1,11 @@
 package funciones;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.OptionalDouble;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -58,6 +60,41 @@ public class FuncionesEjercicios {
 		return primo;
 	}
 	
+	public static double ejercicio6b(double[] num) {
+		double sum = 0;
+		double media = 0;
+		for(int i = 0; i<num.length; i++) {
+			sum += num[i];
+			media = sum/num[i];
+		}
+		return media;
+	}
+	
+	public static String ejercicio7b(String[] cadena) {
+		int random = new Random().nextInt(cadena.length);
+		String frutaRandom = cadena[random];
+		
+		return frutaRandom;
+	}
+	
+	/*public static int ejercicio8b(int...numeros) {
+		Scanner sc = new Scanner(System.in);
+		int numPedido = 1;
+		boolean terminar = false;
+		for(int i=0; i<numPedido; i++) {
+			System.out.println("Escriba un número, si desea terminar, escriba terminar");
+			sc.nextInt();
+			if(terminar == true) {
+				System.out.println("Has parado");;
+		} else {
+			if(terminar == false) {
+				
+			}
+		}
+		}
+		return numPedido-1;
+	}*/
+	
 	//6. Crea una función que reciba un array de números y devuelva su media
 	public static double media(double... numeros) {
 		double resultado = 0;
@@ -65,10 +102,6 @@ public class FuncionesEjercicios {
 			resultado += numero;
 		}
 		return resultado/numeros.length;		
-	}
-	
-	public static double ejercicio6(double...numeros) {
-		return Arrays.stream(numeros).average().getAsDouble();
 	}
 	
 	/**
@@ -90,6 +123,10 @@ public class FuncionesEjercicios {
 			System.out.println(cadena);
 		}*/
 		Arrays.stream(cadenas).forEach(e->System.out.println(e));  // Programación funcional
+	}
+	
+	public static double ejercicio6(double...numeros) {
+		return Arrays.stream(numeros).average().getAsDouble();
 	}
 	
 	/**
@@ -301,8 +338,19 @@ public class FuncionesEjercicios {
 		//ejercicio4("Raúl","Camarero","Barista","Gigoló");
 		
 		//Ejercicio 5
-		int num = 15;
-		System.out.println(ejercicio5(num));
+		// int num = 15;
+		// System.out.println(ejercicio5(num));
+		
+		//Ejercicio 6b
+		// double media = media(4,7,32,9,10,24);
+		// System.out.println(media);
+		
+		//Ejercicio 7b
+		//String[] cadena = {"Limón", "Pera", "Sandía", "Manzana", "Uva"};
+		//System.out.println(ejercicio7b(cadena));
+		
+		//Ejercicio8b
+		//ejercicio8b();
 		
 		// Ejercicio 6
 		/*double[] numeros = {12.45,14.18,25.94};
@@ -351,5 +399,5 @@ public class FuncionesEjercicios {
 		/*System.out.println(ejercicio15("27-07-1976"));
 		System.out.println(sumarTiemposCadenaFecha("27-07-1976", 5, 3, 2));*/
 	}
+	}
 
-}
