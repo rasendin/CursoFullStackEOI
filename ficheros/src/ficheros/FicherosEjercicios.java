@@ -1,12 +1,44 @@
 package ficheros;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class FicherosEjercicios {
+	
+	/**
+	 * Crea un programa que vaya leyendo lo que el usuario escribe en consola y lo escriba en un
+	 * fichero (línea a línea). Terminará cuando el usuario escriba la palabra ‘FIN’.
+	 * @param nombre
+	 */
+	
+	public static void ejercicio2(String nombreFichero) {
+		Scanner sc = new Scanner(System.in);
+		String linea;
+		try {	// Esto crea el fichero vacío
+			Files.writeString(Paths.get(nombreFichero), "");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		do {	// Aqui vamos añadiendo linea a linea hasta que pongan la palabra FIN
+			System.out.println("Introduzca la línea que quiere insertar en el fichero (FIN para finalizar): ");
+			linea = sc.nextLine();
+			if(!linea.equalsIgnoreCase("fin")) {
+				try {
+					Files.writeString(Paths.get(nombreFichero), linea+"\n", StandardOpenOption.APPEND);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		} while(!linea.equalsIgnoreCase("fin"));
+		
+		sc.close();
+	}
 	
 	/**
 	 * A partir de un archivo que contiene una palabra en cada línea. Carga las palabras en un array*
@@ -35,7 +67,8 @@ public class FicherosEjercicios {
 	}
 
 	public static void main(String[] args) {
-		ejercicio7y5();
+		// ejercicio7y5();
+		ejercicio2("C:/ficheros/ejercicio2.txt");
 	}
 
 }
