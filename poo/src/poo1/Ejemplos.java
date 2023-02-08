@@ -132,10 +132,53 @@ public class Ejemplos {
 		
 	}
 	
+	public static void ejercicio2() {
+		List<Jugador> jugadores = new ArrayList<Jugador>();
+		Jugador Naomi = new Jugador("Naomi",25,50000);
+		Jugador Francisco = new Jugador("Francisco",45,40000);
+		Jugador Null = new Jugador();
+		Jugador Null2 = new Jugador();
+		Jugador Raul = new Jugador("Raúl",24,50000);
+		Jugador Juan = new Jugador("Juan",20,80000);
+		jugadores.add(Naomi);
+		jugadores.add(Francisco);
+		jugadores.add(null);
+		jugadores.add(null);
+		jugadores.add(Raul);
+		jugadores.add(Juan);
+		jugadores.stream()
+		.filter(e -> e != null)
+		.forEach(e -> System.out.println(e));
+	}
+	
+	public static void ejercicio3() {
+		List<Jugador> jugadores = new ArrayList<Jugador>();
+		Jugador Naomi = new Jugador("Naomi",25,50000);
+		Jugador Francisco = new Jugador("Francisco",45,40000);
+		Jugador Null = new Jugador();
+		Jugador Null2 = new Jugador();
+		Jugador Raul = new Jugador("Raúl",24,50000);
+		Jugador Juan = new Jugador("Juan",20,80000);
+		Jugador clonNaomi = new Jugador(Naomi);
+		Jugador clonFrancisco = new Jugador(Francisco);
+		Jugador clonRaul = new Jugador(Raul);
+		Jugador clonJuan = new Jugador(Juan);
+		jugadores.add(clonNaomi);
+		jugadores.add(clonFrancisco);
+		jugadores.add(clonRaul);
+		jugadores.add(clonJuan);
+		clonNaomi.setNombre("Elvira");
+		jugadores.stream()
+		.filter(e -> e != null)
+		.forEach(e -> System.out.println(e));
+	}
+	
 	public static void main(String[] args) {
 		//ejemplosCoches();
 		//ejercicio1();	
-		ejemploListaJugadores();
+		//ejemploListaJugadores();
+		ejercicio2();
+		ejercicio3();
 	}
 
 }
