@@ -127,5 +127,22 @@ public class Coche {
 		return Objects.equals(marca, other.marca) && Objects.equals(modelo, other.modelo);
 	}
 	
+	// 6. Métodos propios de la clase
+	
+	/**
+	 * Devolvemos true si el coche supera los 30000 euros
+	 * @return
+	 */
+	
+	public boolean esCaro() {
+		/*boolean resultado = false;
+		if(precio>30000) {
+			resultado = true;
+		} else {
+			resultado = false;
+		}
+		return resultado;*/
+		return precio>30000?true:false;
+	}
 	
 }

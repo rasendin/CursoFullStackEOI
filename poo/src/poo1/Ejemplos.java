@@ -56,6 +56,12 @@ public class Ejemplos {
 		} else {
 			System.out.println("Los coches son diferentes");
 		}
+		
+		if(miCoche.esCaro()) {
+			System.out.println("Mi coche es caro");
+		} else {
+			System.out.println("Mi coche es barato");
+		}
 	}
 	
 	public static void ejercicio1() {
@@ -173,12 +179,47 @@ public class Ejemplos {
 		.forEach(e -> System.out.println(e));
 	}
 	
+	public static void ejemploEquipos() {
+		Equipo barsa = new Equipo();
+		barsa.setNombre("F.C. Barcelona");
+		barsa.setPresupuesto(400000000);
+		Estadio campNou = new Estadio();	// Creo el estadio y le doy datos
+		campNou.setNombre("Camp Nou");
+		campNou.setCapacidad(100000);
+		barsa.setEstadio(campNou);	// Asigno el estadio al equipo
+		List<Jugador> jugadoresBarsa = new ArrayList<Jugador>();	// Creo la lista y le meto jugadores
+		jugadoresBarsa.add(new Jugador("Raul",23,200000));
+		jugadoresBarsa.add(new Jugador("Fran",25,100000));
+		jugadoresBarsa.add(new Jugador("Angel",20,150000));
+		jugadoresBarsa.add(new Jugador("David",19,80000));
+		barsa.setJugadores(jugadoresBarsa);
+		System.out.println("Fin de la creación del equipo");
+		// Imprimo el equipo
+		//System.out.println(barsa);
+		
+		// Probamos el constructor de copia
+		Equipo madrid = new Equipo(barsa);
+		madrid.setNombre("Real Madrid");
+		madrid.setPresupuesto(100000);
+		barsa.getEstadio().setNombre("Nuevo Campo");	// Le cambio el nombre del estadio del barsa
+		madrid.getEstadio().setNombre("Santiago Bernabeu");
+		madrid.getEstadio().setCapacidad(80000);
+		// Accede al equipo, luego a su lista de jugadores, luego a su primer elemento de la lista y luego le cambia el nombre
+		barsa.getJugadores().get(0).setNombre("Francisco");	
+		madrid.getJugadores().get(1).setNombre("Ate");
+		
+		// Impresión de los equipo
+		System.out.println(barsa);	// Imprimo el Barsa
+		System.out.println(madrid);	// Imprimo el Madrid
+	}
+	
 	public static void main(String[] args) {
 		//ejemplosCoches();
 		//ejercicio1();	
 		//ejemploListaJugadores();
-		ejercicio2();
-		ejercicio3();
+		//ejercicio2();
+		//ejercicio3();
+		ejemploEquipos();
 	}
 
 }
