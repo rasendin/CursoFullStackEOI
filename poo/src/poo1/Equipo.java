@@ -12,7 +12,7 @@ public class Equipo {
 	private double presupuesto;
 	
 	public Equipo() {
-		
+		jugadores = new ArrayList<Jugador>();	// Creamos el objeto para poder meter elementos
 	}
 
 	public Equipo(String nombre, Estadio estadio, List<Jugador> jugadores, double presupuesto) {
@@ -29,7 +29,7 @@ public class Equipo {
 		this.presupuesto = e.presupuesto;
 		this.estadio = new Estadio(e.estadio);	// Forma correcta de copiar un objeto
 		this.jugadores = new ArrayList<Jugador>();	// Creo la lista vacía
-		e.getJugadores().forEach(j->this.jugadores.add(new Jugador(j)));
+		e.getJugadores().forEach(j->this.jugadores.add(new Jugador(j)));	// Voy rellenando la lista con copias jugador a jugador
 	}
 
 	public String getNombre() {
