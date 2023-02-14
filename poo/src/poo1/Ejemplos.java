@@ -179,6 +179,19 @@ public class Ejemplos {
 		.forEach(e -> System.out.println(e));
 	}
 	
+	public static void ejercicio4() {
+		Equipo equipo = new Equipo();
+		equipo.setNombre("Equipo EOI");
+		equipo.addJugador(new Jugador("José",25,100000));	// añade jugadores a la lista
+		equipo.addJugador(new Jugador("Paco",25,100000));
+		equipo.addJugador(new Jugador("Luis",25,100000));
+		equipo.addJugador(new Jugador("Raul",25,100000));
+		equipo.deleteJugador(0);	// borra el primer elemento
+		equipo.getJugadores().forEach(e->System.out.println(e));	// Muestra todos los jugadores de la lista 
+		System.out.println("El sueldo de todos los jugadores es: " + equipo.totalSueldo());
+		
+	}
+	
 	public static void ejemploEquipos() {
 		Equipo barsa = new Equipo();
 		barsa.setNombre("F.C. Barcelona");
@@ -219,7 +232,8 @@ public class Ejemplos {
 		//ejemploListaJugadores();
 		//ejercicio2();
 		//ejercicio3();
-		ejemploEquipos();
+		//ejemploEquipos();
+		ejercicio4();
 	}
 
 }

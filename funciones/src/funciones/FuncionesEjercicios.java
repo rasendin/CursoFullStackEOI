@@ -77,23 +77,46 @@ public class FuncionesEjercicios {
 		return frutaRandom;
 	}
 	
-	/*public static int ejercicio8b(int...numeros) {
-		Scanner sc = new Scanner(System.in);
-		int numPedido = 1;
-		boolean terminar = false;
-		for(int i=0; i<numPedido; i++) {
-			System.out.println("Escriba un número, si desea terminar, escriba terminar");
-			sc.nextInt();
-			if(terminar == true) {
-				System.out.println("Has parado");;
-		} else {
-			if(terminar == false) {
-				
-			}
-		}
-		}
-		return numPedido-1;
-	}*/
+	public static void ejercicio8b(int...numeros) {
+		/*Scanner sc = new Scanner(System.in);
+		System.out.println("Ingrese un número");
+		sc.nextInt();*/
+		int[] number = {1,2,3,4};
+		Arrays.stream(number).max().getAsInt();
+		System.out.println(number);
+		String stringArr = Arrays.toString(number);
+	
+	}
+	
+	public static int ejercicio9d(String cadena, String subcadena) {
+		    int count = 0;
+		    int index = 0;
+		    while (index != -1) {
+		        index = cadena.indexOf(subcadena, index);
+		        if (index != -1) {
+		            count++;
+		            index += subcadena.length();
+		        }
+		    }
+		    return count;
+	}
+	
+	public static String ejercicio10(String cadena, char separador, int numero) {
+		 String resultado = "";
+		    for (int i = 0; i < cadena.length(); i++) {
+		        resultado += cadena.charAt(i);
+		        if (i % numero == numero - 1 && i != cadena.length() - 1) {
+		            resultado += separador;
+		        }
+		    }
+		    return resultado;
+	}
+	
+	public static String[] ejercicio12b(String[] array) {
+		    Arrays.sort(array, (a, b) -> b.compareTo(a));
+		    return array;
+		
+	}
 	
 	//6. Crea una función que reciba un array de números y devuelva su media
 	public static double media(double... numeros) {
@@ -229,10 +252,12 @@ public class FuncionesEjercicios {
 	/**
 	 * Crea una función que reciba un array de cadenas y te lo devuelva ordenado
 	 * alfabéticamente de la ‘z’ a la ‘a’
+	 * @return 
 	 */
-	public static void ejercicio12(String[] cadenas) {
+	public static String[] ejercicio12(String[] cadenas) {
 		//Arrays.sort(cadenas);  // Orden ascendente y se modifica fuera del método
 		Arrays.sort(cadenas, Comparator.reverseOrder());  // orden descendente
+		return cadenas;
 	}
 	
 	/**
@@ -351,6 +376,22 @@ public class FuncionesEjercicios {
 		
 		//Ejercicio8b
 		//ejercicio8b();
+		
+		//Ejercicio9
+		/*String cadena = "Hola pepe";
+		String subcadena = "H";
+		System.out.println(ejercicio9d(cadena,subcadena));*/
+		
+		//Ejercicio10
+		/*String cadena = "Naomi Elvira";
+		char separador = '*';
+		int numero = 2;
+		System.out.println(ejercicio10(cadena,separador,numero));*/
+		
+		//Ejercicio12
+		String[] array = {"Manzana","Naomi","Jose","Raul"};
+		String[] sortedArray = ejercicio12(array);
+		System.out.println(Arrays.toString(sortedArray));
 		
 		// Ejercicio 6
 		/*double[] numeros = {12.45,14.18,25.94};
