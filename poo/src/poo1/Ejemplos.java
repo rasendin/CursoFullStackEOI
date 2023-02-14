@@ -280,9 +280,13 @@ public class Ejemplos {
 				System.out.println(animal.rugido());
 			}		
 		}
-			
-		
 	}
+		
+		public static void ejercicio1y2Herencia() {
+			TiendaLicores tiendaLicores = new TiendaLicores();
+			tiendaLicores.bienvenida();
+		}
+		
 	
 	public static void main(String[] args) {
 		//ejemplosCoches();
@@ -292,7 +296,8 @@ public class Ejemplos {
 		//ejercicio3();
 		//ejemploEquipos();
 		//ejercicio4();
-		ejemplosHerencias();
+		// ejemplosHerencias();
+		ejercicio1y2Herencia();
 	}
 
 }
