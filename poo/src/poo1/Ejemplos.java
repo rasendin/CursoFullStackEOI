@@ -226,6 +226,64 @@ public class Ejemplos {
 		System.out.println(madrid);	// Imprimo el Madrid
 	}
 	
+	public static void ejemplosHerencias() {
+		//Animal animal = new Animal("Mi animal",10);  // Falla al ser clase Abstracta
+		
+		Ave pajaro = new Ave(true);
+		Ave gallina = new Ave("Animal desconocido", 1, false);
+
+		
+		
+		//animal.comer();
+		
+		//pajaro.comer();
+		pajaro.ponerHuevos();
+
+		System.out.println("El pájaro se llama : " + pajaro.getNombre());
+		
+		Mamifero leon = new Mamifero("León", 210, true);
+		
+		leon.comer();
+		System.out.println(pajaro.toString());
+		System.out.println(leon.toString());
+		Mamifero gato = new Mamifero("Animal desconocido",1,true);
+		
+		if(pajaro.equals(gallina)) {
+			System.out.println("El pájaro es igual a la gallina");
+		} else {
+			System.out.println("El pájaro y la gallina no son iguales");
+		}
+		
+		// Aquí aunque se llaman igual y pesan lo mismo y son animales
+		// los detecta diferente porque son de distinta clase.
+		if(pajaro.equals(gato)) {
+			System.out.println("El pájaro es igual al gato");
+		} else {
+			System.out.println("El pájaro y el gato no son iguales");
+		}
+			
+		List<Animal> animales = new ArrayList<Animal>();
+		animales.add(gallina);
+		animales.add(pajaro);
+		animales.add(leon);
+		animales.forEach(e->System.out.println(e.toString()));  // Aquí hay polimorfismo.
+		animales.forEach(e->System.out.println(e.rugido())); // Aquí también.
+		
+		System.out.println("Ejemplo instanceof:");
+		for(Animal animal : animales) {
+			// La siguiente línea fallaría en los animales que no fuesen Ave. Debe ponerse dentro de un if con el instanceof
+			//System.out.println("El número de pollitos es: " + ((Ave)animal).pollitos(animal.getNombre()));
+			if(animal instanceof Ave) {
+				System.out.println("El número de pollitos es: " + ((Ave)animal).pollitos(animal.getNombre()));
+				System.out.println(animal.rugido());
+			} else if(animal instanceof Mamifero) {
+				System.out.println(animal.rugido());
+			}		
+		}
+			
+		
+	}
+	
 	public static void main(String[] args) {
 		//ejemplosCoches();
 		//ejercicio1();	
@@ -233,7 +291,8 @@ public class Ejemplos {
 		//ejercicio2();
 		//ejercicio3();
 		//ejemploEquipos();
-		ejercicio4();
+		//ejercicio4();
+		ejemplosHerencias();
 	}
 
 }
