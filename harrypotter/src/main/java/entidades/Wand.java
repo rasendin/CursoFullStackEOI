@@ -1,10 +1,12 @@
 package entidades;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /* Esto es una varita en el universo Harry Potter */
-public class Wand {
-
+public class Wand implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	private String wood;
 	private String core;
 	private Double length;
